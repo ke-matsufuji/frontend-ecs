@@ -1,4 +1,6 @@
 export default function Index() {
+  // INFO: 雛形作成はこちらを参照
+  // https://reactrouter.com/start/framework/installation
   return (
     <section>
       <h1>こんにちは 👋</h1>
