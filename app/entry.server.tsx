@@ -4,6 +4,8 @@ import { createReadableStreamFromReadable } from "@react-router/node";
 import { ServerRouter } from "react-router";
 import { renderToPipeableStream } from "react-dom/server";
 
+// INFO:
+// https://reactrouter.com/api/framework-conventions/entry.server.tsx
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
