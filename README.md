@@ -44,6 +44,75 @@ npm run build
 
 ## Deployment
 
+### AWS ECS with ECR Deployment
+
+このプロジェクトは AWS ECS と ECR を使用して自動的にデプロイできます。
+
+#### 前提条件
+
+- Node.js 20 以上
+- AWS アカウント
+- Docker がインストールされていること
+- AWS CLI が設定されていること
+
+#### 手動での.env設定
+
+自動スクリプトを使わない場合は、手動で以下の手順で設定できます：
+
+1. `.env.example`を`.env`にコピー
+2. `.env`ファイルで実際のAWS認証情報に置き換え
+
+#### デプロイ手順
+
+1. **CDK環境のセットアップ**
+
+   ```bash
+   cd cdk
+   npm install
+   npm run cdk:bootstrap
+   ```
+
+2. **デプロイ実行**
+
+   ```bash
+   npm run cdk:deploy
+   ```
+
+#### デプロイ後の確認
+
+デプロイが完了すると、以下の情報が出力されます：
+
+- **ECRリポジトリURI**: Dockerイメージが保存される場所
+- **ロードバランサーDNS**: アプリケーションのURL
+- **アプリケーションURL**: 直接アクセス可能なURL
+
+#### 環境変数の設定
+
+デプロイ時に以下の環境変数を設定できます：
+
+```bash
+# AWSリージョンを指定（デフォルト: ap-northeast-1）
+export CDK_DEFAULT_REGION=us-west-2
+
+# デプロイ実行
+npm run deploy
+```
+
+#### トラブルシューティング
+
+- **ECRログインエラー**: AWS認証情報を確認してください
+- **Dockerビルドエラー**: Dockerが起動していることを確認してください
+- **CDKデプロイエラー**: CDKのbootstrapが実行されていることを確認してください
+
+#### クリーンアップ
+
+リソースを削除する場合：
+
+```bash
+cd cdk
+npm run cdk:destroy
+```
+
 ### Docker Deployment
 
 To build and run using Docker:

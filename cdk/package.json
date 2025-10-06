@@ -1,0 +1,25 @@
+{
+  "name": "rr-ssr-ecs-cdk",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "cdk": "cdk",
+    "cdk:bootstrap": "dotenv -e ../.env -- cdk bootstrap",
+    "cdk:deploy": "dotenv -e ../.env -- cdk deploy",
+    "cdk:diff": "dotenv -e ../.env -- cdk diff",
+    "cdk:destroy": "dotenv -e ../.env -- cdk destroy"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.158.0",
+    "cdk-ecr-deployment": "^4.0.3",
+    "constructs": "10.3.0",
+    "dotenv": "^17.2.3",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^10.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.6.3"
+  }
+}

@@ -6,8 +6,10 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "start": "react-router-serve ./build/server/index.js --port 3000 --host 0.0.0.0",
+    "typecheck": "react-router typegen && tsc",
+    "deploy": "./scripts/deploy.sh",
+    "deploy:image": "./scripts/build-and-push.sh"
   },
   "dependencies": {
     "@react-router/node": "^7.9.2",

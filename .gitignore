@@ -5,3 +5,8 @@
 # React Router
 /.react-router/
 /build/
+
+# CDK
+/cdk/node_modules
+/cdk/dist
+/cdk/cdk.out
