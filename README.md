@@ -104,6 +104,21 @@ npm run deploy
 - **Dockerビルドエラー**: Dockerが起動していることを確認してください
 - **CDKデプロイエラー**: CDKのbootstrapが実行されていることを確認してください
 
+#### モニタリング
+```
+# ログ確認
+aws logs tail /aws/ecs/rr-ssr --follow --region ap-northeast-1
+```
+
+```
+# サービス状態確認
+aws ecs describe-services \
+  --cluster rr-ssr-cluster \
+  --services rr-ssr-service \
+  --region ap-northeast-1 \
+  --query 'services[0].{RunningCount:runningCount,DesiredCount:desiredCount}'
+```
+
 #### クリーンアップ
 
 リソースを削除する場合：
