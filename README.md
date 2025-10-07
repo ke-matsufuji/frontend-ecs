@@ -133,10 +133,10 @@ npm run cdk:destroy
 To build and run using Docker:
 
 ```bash
-docker build -t my-app .
+docker compose up -d
 
-# Run the container
-docker run -p 3000:3000 my-app
+# Access with Hot Reload 
+# http://localhost:15173/
 ```
 
 The containerized application can be deployed to any platform that supports Docker, including:
